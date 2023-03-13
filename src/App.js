@@ -11,8 +11,9 @@ function App() {
   });
 
   const handleChange = (event) => {
-    setState({input: event.target.value,
-              defaultText: event.target.placeholder});
+    setState({
+      input: event.target.value,
+      defaultText: event.target.placeholder});
   };
 
   return (

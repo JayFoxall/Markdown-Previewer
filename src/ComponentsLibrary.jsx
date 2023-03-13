@@ -1,7 +1,7 @@
 import React from 'react';
 import { marked } from "marked"
 
-// A component for input text area
+// input text component
 export function InputArea(props) {
   return (
     <textarea
@@ -12,19 +12,17 @@ export function InputArea(props) {
   );
 }
 
-// A component for markdown preview
+// markdown preview component
 export function PreviewArea(props) {
     const htmlInput = marked.parse(props.input)
     const placeholderText = marked.parse(props.defaultText)
   
   if(props.input !== ""){
-        return (
-            <div className="preview" dangerouslySetInnerHTML={{__html: htmlInput}}/>
-        )} else {
-        return (
-            <div className="preview" dangerouslySetInnerHTML={{__html: placeholderText}}/>
+    return (
+      <div className="preview" dangerouslySetInnerHTML={{__html: htmlInput}}/>
+    )} else {
+    return (
+      <div className="preview" dangerouslySetInnerHTML={{__html: placeholderText}}/>
     )}
-   /* return(
-        <div className="preview" dangerouslySetInnerHTML={{__html: htmlInput}}/>
-    )*/
+
 };
