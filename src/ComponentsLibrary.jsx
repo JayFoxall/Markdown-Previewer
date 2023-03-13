@@ -1,5 +1,5 @@
 import React from 'react';
-import { marked } from "marked"
+import { marked } from 'marked'
 
 marked.setOptions({
   gfm: true,
@@ -10,9 +10,8 @@ export function InputArea(props) {
   return (
     <textarea
       id = "editor"
-      value={props.input}
-      onChange={props.onChange}
-      placeholder="<h1>Enter some markdown here</h1>"
+      defaultValue={props.defaultText}
+      onChange={props.onChange}      
     />
   );
 }

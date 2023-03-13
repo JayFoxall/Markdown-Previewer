@@ -6,20 +6,7 @@ import './App.css';
 
 function App() {
 
-  const startText = `<h1>hello</h1>
-                    <h2>world</h2>
-                    <a href="#">here's a link</a>
-                    <p> a text block</p>
-                    <code>some inline code</code>
-                    <ul>
-                      <li> a list item </li>
-                      <li> another </li>
-                      <li> another <
-                    </ul>
-                    <blockquote>some text from another source</blockquote>
-                    <img src = "#" alt= "an image">
-                    <b>and some bold text!</b>
-                    `
+  const startText = "\n # heading1 \n ## heading2 \n [links](#) \n `inline code` \n ``` \n code block\n ```\n- a list item \n >a blockquote\n![image](image.jpg)\n---\n**bold text**"
 
   const [state, setState] = useState({
     input: "",
@@ -34,7 +21,7 @@ function App() {
 
   return (
     <>
-      <InputArea input={state.input} onChange={handleChange} />
+      <InputArea input={state.input} onChange={handleChange} defaultText= {state.defaultText} />
       <PreviewArea input={state.input} defaultText = {state.defaultText}/>
     </>
   );
