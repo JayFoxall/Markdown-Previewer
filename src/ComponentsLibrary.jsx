@@ -1,7 +1,11 @@
 import React from 'react';
 import { marked } from "marked"
 
-// input text component
+marked.setOptions({
+  gfm: true,
+  breaks: true,
+})
+
 export function InputArea(props) {
   return (
     <textarea
@@ -12,17 +16,16 @@ export function InputArea(props) {
   );
 }
 
-// markdown preview component
 export function PreviewArea(props) {
     const htmlInput = marked.parse(props.input)
     const placeholderText = marked.parse(props.defaultText)
   
   if(props.input !== ""){
     return (
-      <div className="preview" dangerouslySetInnerHTML={{__html: htmlInput}}/>
+      <div dangerouslySetInnerHTML={{__html: htmlInput}}/>
     )} else {
     return (
-      <div className="preview" dangerouslySetInnerHTML={{__html: placeholderText}}/>
+      <div dangerouslySetInnerHTML={{__html: placeholderText}}/>
     )}
 
 };
