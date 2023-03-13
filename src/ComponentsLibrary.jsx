@@ -9,6 +9,7 @@ marked.setOptions({
 export function InputArea(props) {
   return (
     <textarea
+      id = "editor"
       value={props.input}
       onChange={props.onChange}
       placeholder="<h1>Enter some markdown here</h1>"
@@ -22,10 +23,10 @@ export function PreviewArea(props) {
   
   if(props.input !== ""){
     return (
-      <div dangerouslySetInnerHTML={{__html: htmlInput}}/>
+      <div id="preview" dangerouslySetInnerHTML={{__html: htmlInput}}/>
     )} else {
     return (
-      <div dangerouslySetInnerHTML={{__html: placeholderText}}/>
+      <div id="preview" dangerouslySetInnerHTML={{__html: placeholderText}}/>
     )}
 
 };
